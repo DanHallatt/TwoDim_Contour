@@ -23,7 +23,7 @@ Plots a series of 2-dimensional data in the form of a contour map. Contours are 
 
 This figure was generated from the following user-specified options:
  - xData = [x1, x2, ... xn] where x = Si + Al / (Si + Al + Mg + Fe) in at.%.
- - yData = [x1, x2, ... xn] where x = Mg# = Mg / (Mg + Fe) in at.%.
+ - yData = [y1, y2, ... yn] where x = Mg# = Mg / (Mg + Fe) in at.%.
  - xMax = 0.6
  - xMin = 0.1
  - yMax = 1.0
