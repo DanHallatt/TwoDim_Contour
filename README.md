@@ -28,7 +28,9 @@ This figure was generated from the following user-specified options:
  - xMin = 0.1
  - yMax = 1.0
  - yMin = 0.6
- - ContLines = 'y'
+ - yLabel = 'Mg / (Mg + Fe) [at.%]
+ - xLabel = '(Si + Al) / (Si + Al + Mg + Fe) [at.%]
+- ContLines = 'y'
  - NumLevels = 7
  - Colour = 'Blues'
  
