@@ -22,11 +22,15 @@ Plots a series of 2-dimensional data in the form of a contour map. Contours are 
  </div>
 
 This figure was generated from the following user-specified options:
- - dataset = [[A1, B1, C1], [A2, B2, C2], ...[An, Bn, Cn]] where A = Si+Al, B = Fe, and C = Mg at.%
- - ContLines = 'n'
- - NumLevels = 8
+ - xData = [x1, x2, ... xn] where x = Si + Al / (Si + Al + Mg + Fe) in at.%.
+ - yData = [x1, x2, ... xn] where x = Mg# = Mg / (Mg + Fe) in at.%.
+ - xMax = 0.6
+ - xMin = 0.1
+ - yMax = 1.0
+ - yMin = 0.6
+ - ContLines = 'y'
+ - NumLevels = 7
  - Colour = 'Blues'
- - type = 'silicate'
  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
