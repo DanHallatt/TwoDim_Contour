@@ -10,7 +10,7 @@ from sigfig import round
 
 # A) "TwoDim_Contour" : plots 2D contour plot, using a data in the form [[A1, B1, C1], [A2, B2, C2], ...]. Also plots a 2D plot of all of the raw data, for comparison/check of the contours.
 
-def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, yLabel, xLabel, ContLines, FigureSavePath, FileName):
+def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, yLabel, xLabel, ContLines, WhiteCutoff=0, ContourValues, FigureSavePath, FileName):
     """
     ** yData : Data to be plotted in the y-axis, in the form of a list [A1, A2, A3, .. An]
     ** xData : Data to be plotted in the x-axis, in the form of a list [B1, B2, B3, .. Bn]
@@ -18,7 +18,10 @@ def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, yLab
     ** yMin : Coordinate for y-axis minimum of plot.
     ** xMax : Coordinate for x-axis maximum of plot.
     ** xMin : Coordinate for x-axis minimum of plot.
-    ** NumLevels: Number of contour levels.
+    ** NumLevels : Number of contour levels.
+    ** ContLines : Either 'y' (yes) or 'n' (no), plot or not to plot the lines seperating contour levels.
+    ** WhiteCutoff : A value of data density used as the maximum density cutoff for colouring contour levels white (to make a white background). Default value is zero(0), which can be adjusted by trial-and-error (or by reading contour line values with ContourValues='y') to find an appropriate value such that the background is white.
+    ** ContourValues : Either 'y' (yes) or 'n' (no), plot or not to plot the values defining each contour level (value is density value). Requires ContLines='y'.
     ** Colour : In quotations (such as 'Blues') the colour of the contour plot. Options available according to 'cmap' of matplotlib (https://matplotlib.org/stable/tutorials/colors/colormaps.html).
     ** yLabel : In quotations ('test' for example), the text to be displayed in the y-axis of the plot.
     ** xLabel : In quotations ('test' for example), the text to be displayed in the x-axis of the plot.
@@ -39,13 +42,15 @@ def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, yLab
     
     # Contour shading:
     cfset = ax51.contourf(xx, yy, f, NumLevels, cmap=Colour)
-## Or kernel density estimate plot instead of the contourf plot
-#ax.imshow(np.rot90(f), cmap='Blues', extent=[xmin, xmax, ymin, ymax])
-# Contour lines:
+    # Making a white background for contour levels below the value specified by the user ('WhiteCutoff')
+    ContColour_Ternary.cmap.set_under('w')
+    ContColour_Ternary.set_clim(WhiteCutoff)
+    # Contour lines:
     if ContLines =='y':
         cset = ax51.contour(xx, yy, f, NumLevels, colors='k', alpha=1, linewidths = 0.5, linestyles = '-')
-    # Label plot
-#    ax51.clabel(cset, inline=1, fontsize=5)
+        # Label plot
+        if ContourValues == 'y':
+            ax51.clabel(cset, inline=1, fontsize=5)
     ax51.set_xlabel(xLabel)
     ax51.set_ylabel(yLabel)
     ax51.set_xlim(xMin, xMax)
