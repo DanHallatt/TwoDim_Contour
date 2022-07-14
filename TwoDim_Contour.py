@@ -10,7 +10,7 @@ from sigfig import round
 
 # A) "TwoDim_Contour" : plots 2D contour plot, using a data in the form [[A1, B1, C1], [A2, B2, C2], ...]. Also plots a 2D plot of all of the raw data, for comparison/check of the contours.
 
-def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, yLabel, xLabel, ContLines, WhiteCutoff=0, ContourValues, FigureSavePath, FileName):
+def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, yLabel, xLabel, ContLines, WhiteCutoff, ContourValues, FigureSavePath, FileName):
     """
     ** yData : Data to be plotted in the y-axis, in the form of a list [A1, A2, A3, .. An]
     ** xData : Data to be plotted in the x-axis, in the form of a list [B1, B2, B3, .. Bn]
