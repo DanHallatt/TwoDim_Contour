@@ -38,21 +38,21 @@ def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, yLab
     kernel = st.gaussian_kde(values)
     f = np.reshape(kernel(positions).T, xx.shape)
 
-    fig51, ax51 = plt.subplots()
+    fig, ax = plt.subplots()
     
     # Contour shading:
-    cfset = ax51.contourf(xx, yy, f, NumLevels, cmap=Colour)
+    cfset = ax.contourf(xx, yy, f, NumLevels, cmap=Colour)
     # Making a white background for contour levels below the value specified by the user ('WhiteCutoff')
-    ContColour_Ternary.cmap.set_under('w')
-    ContColour_Ternary.set_clim(WhiteCutoff)
+    cfset.cmap.set_under('w')
+    cfset.set_clim(WhiteCutoff)
     # Contour lines:
     if ContLines =='y':
-        cset = ax51.contour(xx, yy, f, NumLevels, colors='k', alpha=1, linewidths = 0.5, linestyles = '-')
+        cset = ax.contour(xx, yy, f, NumLevels, colors='k', alpha=1, linewidths = 0.5, linestyles = '-')
         # Label plot
         if ContourValues == 'y':
-            ax51.clabel(cset, inline=1, fontsize=5)
-    ax51.set_xlabel(xLabel)
-    ax51.set_ylabel(yLabel)
-    ax51.set_xlim(xMin, xMax)
-    ax51.set_ylim(yMin, yMax)
-    fig51.savefig(FigureSavePath + FileName + '.pdf')
+            ax.clabel(cset, inline=1, fontsize=5)
+    ax.set_xlabel(xLabel)
+    ax.set_ylabel(yLabel)
+    ax.set_xlim(xMin, xMax)
+    ax.set_ylim(yMin, yMax)
+    fig.savefig(FigureSavePath + FileName + '.pdf')
