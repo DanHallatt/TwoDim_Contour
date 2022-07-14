@@ -7,6 +7,7 @@ Plots a series of 2-dimensional data in the form of a contour map. Contours are 
  - colour of the colour gradient, according to cmap available options (https://matplotlib.org/stable/tutorials/colors/colormaps.html).
  - the number of contours.
  - to plot contour lines.
+ - to plot contour level values within the contour levels.
  - the x- and y-axis limits of the plot.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
