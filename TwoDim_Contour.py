@@ -14,8 +14,11 @@ import scipy.stats as st
 
 def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, ContourValues, ContLines, ContColourFill, DataPointDisp, yLabel, xLabel, FigureSavePath, FileName):
     """
-    ** yData : Data to be plotted in the y-axis, in the form of a list of list [ [A11, A12, .. A1n], ... [Am1, Am2, .. Amn] ], where n is the numer of datapoint in a given dataset and m is the number of datasets to plot individually. Even if m = 1, data must be in form of [ [A11, A12, .. A1n] ], where dataX[0] = [A11, A12, .. A1n] and not = A11.
-    ** xData : Data to be plotted in the x-axis, in the form of a list of lists [ [B11, B12, .. B1n], ... [Bm1, Bm2, .. Bmn] ], where n is the numer of datapoint in a given dataset and m is the number of datasets to plot individually. Even if m = 1, data must be in form of [ [B11, B12, .. B1n] ], where dataX[0] = [B11, B12, .. B1n] and not = B11.
+    ** yData : Data to be plotted in the y-axis, in the form of a list of list [ [A11, A12, ... A1n], [A21, A22, ... A2n] , ... [Am1, Am2, ... Amn] ], where n is the numer of datapoint in a given dataset and m is the number of datasets to plot individually. Even if m = 1, data must be in form of [ [A11, A12, .. A1n] ], where dataX[0] = [A11, A12, .. A1n] and not = A11.
+    ** xData : Data to be plotted in the x-axis, in the form of a list of lists [ [A11, A12, ... A1n], [A21, A22, ... A2n] , ... [Am1, Am2, ... Amn] ], where n is the numer of datapoint in a given dataset and m is the number of datasets to plot individually. Even if m = 1, data must be in form of [ [B11, B12, .. B1n] ], where dataX[0] = [B11, B12, .. B1n] and not = B11.
+            
+        !!! NOTE !!! : Data cannot contain 'NaN' values. Must be cleaned prior to input in this function (or this function modified to clean data by removing them).
+    
     ** yMax : Coordinate for y-axis maximum of plot.
     ** yMin : Coordinate for y-axis minimum of plot.
     ** xMax : Coordinate for x-axis maximum of plot.
