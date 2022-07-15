@@ -31,6 +31,11 @@ def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, Cont
     ** FileName : General name of files to be saved. Must be in single quotations, example : 'TEST_DataSet01'
     """
     
+    ContourLabelTextSize = 0.5
+    ContourLineThickness = 0.4
+    ContourLineStyle = '-'
+    DataPointSize = 3
+    
     # Peform the kernel density estimate
     xx, yy = np.mgrid[xMin:xMax:1000j, yMin:yMax:1000j]
     positions = np.vstack([xx.ravel(), yy.ravel()])
@@ -44,11 +49,11 @@ def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, Cont
         if ContColourFill == 'y':
             cfset = ax.contourf(xx, yy, f, NumLevels, cmap=Colour[r], locator = ticker.MaxNLocator(prune = 'lower')) # Colours the contour levels
         if ContLines =='y':
-            cset = ax.contour(xx, yy, f, NumLevels, colors='k', alpha=1, linewidths = 0.5, linestyles = '-') # Plots contour lines.
+            cset = ax.contour(xx, yy, f, NumLevels, colors='k', alpha=1, linewidths=ContourLineThickness, linestyles=ContourLineStyle) # Plots contour lines.
             if ContourValues == 'y':
-                ax.clabel(cset, inline=1, fontsize=5) # Labels the contour levels.
+                ax.clabel(cset, inline=1, fontsize=ContourLabelTextSize) # Labels the contour levels.
         if DataPointDisp == 'y':
-            ax.scatter(xData[r], yData[r], color='black', alpha=1, s=4) # Includes datapoints over-printed on the contour plot. Usually used to check the appropriatness of the contour levels.
+            ax.scatter(xData[r], yData[r], color='black', alpha=1, s=DataPointSize) # Includes datapoints over-printed on the contour plot. Usually used to check the appropriatness of the contour levels.
     
     ax.set_xlabel(xLabel)
     ax.set_ylabel(yLabel)
