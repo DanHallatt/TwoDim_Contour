@@ -50,13 +50,16 @@ def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, Cont
         f = np.reshape(kernel(positions).T, xx.shape) #Third dimension = 'height' of contours, which is the data-density in x,y-space of.
     
         if ContColourFill == 'y':
-            cfset = ax.contourf(xx, yy, f, NumLevels, cmap=Colour[r], locator = ticker.MaxNLocator(prune = 'lower')) # Colours the contour levels
-        if ContLines =='y':
-            cset = ax.contour(xx, yy, f, NumLevels, colors='k', alpha=1, linewidths=ContourLineThickness, linestyles=ContourLineStyle) # Plots contour lines.
+            ContColour_Ternary = plt.contourf(xx_Ternary, yy_Ternary, f_Ternary, NumLevels, cmap=Colour[k], locator = ticker.MaxNLocator(prune = 'lower'))
+        if ContLines == 'n' and ContourValues == 'y':
+            ContourLineThickness = 0
+            cset_Ternary = plt.contour(xx_Ternary, yy_Ternary, f_Ternary, NumLevels, colors='k', alpha=1, linewidths = ContourLineThickness, linestyles = '-', locator = ticker.MaxNLocator(prune = 'lower')) # Drawing contour lines.
             if ContourValues == 'y':
-                ax.clabel(cset, inline=1, fontsize=ContourLabelTextSize) # Labels the contour levels.
-        if DataPointDisp == 'y':
-            ax.scatter(xData[r], yData[r], color='black', alpha=1, s=DataPointSize) # Includes datapoints over-printed on the contour plot. Usually used to check the appropriatness of the contour levels.
+                ax.clabel(cset_Ternary, inline=1, fontsize=ContourLabelTextSize) # Labelling contour levels within the contour lines.
+        if ContLines == 'y':
+            cset_Ternary = plt.contour(xx_Ternary, yy_Ternary, f_Ternary, NumLevels, colors='k', alpha=1, linewidths = ContourLineThickness, linestyles = '-', locator = ticker.MaxNLocator(prune = 'lower')) # Drawing contour lines.
+            if ContourValues == 'y':
+                ax.clabel(cset_Ternary, inline=1, fontsize=ContourLabelTextSize) # Labelling contour levels within the contour lines.
     
     ax.set_xlabel(xLabel)
     ax.set_ylabel(yLabel)
