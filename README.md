@@ -4,7 +4,7 @@ Plots a series of 2-dimensional data in the form of a contour map. Contours are 
 <!-- Options -->
 ## Options
  User can specify the following parameters when calling the function:
- - choose the colours of the contour colours, according to cmap available options (https://matplotlib.org/stable/tutorials/colors/colormaps.html).
+ - choose the colours of the filled contours, according to cmap available options (https://matplotlib.org/stable/tutorials/colors/colormaps.html).
  - choose the number of contours.
  - to plot contour lines.
  - to display values of the contour level values within the contour lines.
