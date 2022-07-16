@@ -4,11 +4,16 @@ Plots a series of 2-dimensional data in the form of a contour map. Contours are 
 <!-- Options -->
 ## Options
  User can specify the following parameters when calling the function:
- - colour of the colour gradient, according to cmap available options (https://matplotlib.org/stable/tutorials/colors/colormaps.html).
- - the number of contours.
+ - choose the colours of the contour colours, according to cmap available options (https://matplotlib.org/stable/tutorials/colors/colormaps.html).
+ - choose the number of contours.
  - to plot contour lines.
- - to plot contour level values within the contour levels.
+ - to display values of the contour level values within the contour lines.
+ - to plot the individual datapoints of each dataset.
+ - to plot multiple datasets.
  - the x- and y-axis limits of the plot.
+ - the x- and y-axis labels.
+ 
+User can also easily adjust plotting preferences (such as text size and datapoint size) by adjusting the variables defined within the first lines of the function, if so wishes.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -34,6 +39,24 @@ This figure was generated from the following user-specified options:
 - ContLines = 'y'
  - NumLevels = 7
  - Colour = 'Blues'
+ 
+ This figures above were generated from the following user-specified options:
+ - xData = [[A11, A12, .. A1n], [[A21, A22, ... A2n]], where A = Mg# = Mg / Mg + Fe
+ - yData = [[B11, B12, .. B1n], [[B21, B22, ... B2n]], where B = SiRatio = Si + Al / Si + Al + Mg + Fe
+     - red: data_1 (such as A11), blue: data_2 (such as A21)
+ - NumLevels = 10
+ - Colour = ['Blues', 'Reds']
+ - type = 'silicate'
+ - xMax = 0.85
+ - xMin = 0.5
+ - yMax = 0.55
+ - yMin = 0.375
+ - yLabel = 'Mg#'
+ - xLabel = 'SiRatio'
+ - and differing data options for each sub-figure:
+     - A) ContLines = 'n',  ContourValues = 'n',  ContColourFill = 'y',  DataPointDisp = 'y'
+     - B) ContLines = 'y',  ContourValues = 'y',  ContColourFill = 'y',  DataPointDisp = 'n'
+     - C) ContLines = 'n',  ContourValues = 'n',  ContColourFill = 'y',  DataPointDisp = 'n'
  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
