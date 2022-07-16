@@ -50,16 +50,16 @@ def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, Cont
         f = np.reshape(kernel(positions).T, xx.shape) #Third dimension = 'height' of contours, which is the data-density in x,y-space of.
     
         if ContColourFill == 'y':
-            ContColour_Ternary = plt.contourf(xx_Ternary, yy_Ternary, f_Ternary, NumLevels, cmap=Colour[k], locator = ticker.MaxNLocator(prune = 'lower'))
+            ContColour = plt.contourf(xx, yy, f, NumLevels, cmap=Colour[k], locator = ticker.MaxNLocator(prune = 'lower'))
         if ContLines == 'n' and ContourValues == 'y':
             ContourLineThickness = 0
-            cset_Ternary = plt.contour(xx_Ternary, yy_Ternary, f_Ternary, NumLevels, colors='k', alpha=1, linewidths = ContourLineThickness, linestyles = '-', locator = ticker.MaxNLocator(prune = 'lower')) # Drawing contour lines.
+            cset = plt.contour(xx, yy, f, NumLevels, colors='k', alpha=1, linewidths = ContourLineThickness, linestyles = '-', locator = ticker.MaxNLocator(prune = 'lower')) # Drawing contour lines.
             if ContourValues == 'y':
-                ax.clabel(cset_Ternary, inline=1, fontsize=ContourLabelTextSize) # Labelling contour levels within the contour lines.
+                ax.clabel(cset, inline=1, fontsize=ContourLabelTextSize) # Labelling contour levels within the contour lines.
         if ContLines == 'y':
-            cset_Ternary = plt.contour(xx_Ternary, yy_Ternary, f_Ternary, NumLevels, colors='k', alpha=1, linewidths = ContourLineThickness, linestyles = '-', locator = ticker.MaxNLocator(prune = 'lower')) # Drawing contour lines.
+            cset = plt.contour(xx, yy, f, NumLevels, colors='k', alpha=1, linewidths = ContourLineThickness, linestyles = '-', locator = ticker.MaxNLocator(prune = 'lower')) # Drawing contour lines.
             if ContourValues == 'y':
-                ax.clabel(cset_Ternary, inline=1, fontsize=ContourLabelTextSize) # Labelling contour levels within the contour lines.
+                ax.clabel(cset, inline=1, fontsize=ContourLabelTextSize) # Labelling contour levels within the contour lines.
     
     ax.set_xlabel(xLabel)
     ax.set_ylabel(yLabel)
