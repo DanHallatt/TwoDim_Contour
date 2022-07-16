@@ -72,4 +72,4 @@ Associated Institute Link: https://umet.univ-lille.fr/MTP/index.php?lang=fr
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-[product-screenshot]: Images/ExampleFigures.png
+[product-screenshot]: Images/ExamplePlots.png
