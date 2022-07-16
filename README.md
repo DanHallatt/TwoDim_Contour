@@ -20,25 +20,23 @@ User can also easily adjust plotting preferences (such as text size and datapoin
 <!-- Example output -->
 ## Example output
 
+It should be noted that all data must be in the form of a list (of the different groups of data with different contour colours) of lists (of multiple datapoints for each contour):
+
+<br />
+<div align="center">
+ 
+ [[A11, A12, .. A1n], ... [[Am1, Am2, ... Amn]]
+ 
+ </div>
+
+- where n is the numer of datapoints in a given dataset (a particular colour of contours) and m is the number of datasets to plot individually (the number of individual contour plots of differing colours). Even if m = 1, data must be in the form of [[A11, A12, ... A1n]], where xData[0] = [[A11, A12, ... A1n]] and not = A11.
+
 <br />
 <div align="center">
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
  
  </div>
-
-This figure was generated from the following user-specified options:
- - xData = [x1, x2, ... xn] where x = Si + Al / (Si + Al + Mg + Fe) in at.%.
- - yData = [y1, y2, ... yn] where x = Mg# = Mg / (Mg + Fe) in at.%.
- - xMax = 0.6
- - xMin = 0.1
- - yMax = 1.0
- - yMin = 0.6
- - yLabel = 'Mg / (Mg + Fe) [at.%]
- - xLabel = '(Si + Al) / (Si + Al + Mg + Fe) [at.%]
-- ContLines = 'y'
- - NumLevels = 7
- - Colour = 'Blues'
  
  This figures above were generated from the following user-specified options:
  - xData = [[A11, A12, .. A1n], [[A21, A22, ... A2n]], where A = Mg# = Mg / Mg + Fe
