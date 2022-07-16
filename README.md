@@ -1,5 +1,5 @@
 # TwoDim_Contour
-Plots a series of 2-dimensional data in the form of a contour map. Contours are based on 'spatial'-density of datapoints in the domain of the ternary plot.
+Plots a series of 2-dimensional data in the form of a contour map. Contours are based on 'spatial'-density of datapoints in the domain of the ternary plot. Multiple 'sets' of series of 2D data can be plotted on the same figure, each with different colours of their contour maps.
 
 <!-- Options -->
 ## Options
