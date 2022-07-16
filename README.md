@@ -25,7 +25,7 @@ It should be noted that all data must be in the form of a list (of the different
 <br />
 <div align="center">
  
- [[A11, A12, .. A1n], ... [[Am1, Am2, ... Amn]]
+ [[A11, A12, .. A1n], ... [Am1, Am2, ... Amn]]
  
  </div>
 
