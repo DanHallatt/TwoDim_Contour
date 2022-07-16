@@ -45,7 +45,7 @@ def TwoDim_Contour(yData, xData, yMax, yMin, xMax, xMin, NumLevels, Colour, Cont
     
     fig, ax = plt.subplots()
     for k in range(0,len(xData)):
-        values = np.vstack([xData[r], yData[r]])
+        values = np.vstack([xData[k], yData[k]])
         kernel = st.gaussian_kde(values)
         f = np.reshape(kernel(positions).T, xx.shape) #Third dimension = 'height' of contours, which is the data-density in x,y-space of.
     
